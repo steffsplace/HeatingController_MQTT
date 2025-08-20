@@ -13,9 +13,9 @@ The current version of this Temperature control unit is capable of:
 - Controls the Valves of each Heating Cirquit...the open/close valves need to be operated in a duty cycle mode, as there is a time delay 
 of valve adjustment and the effect of temperature adjustment
 - communicating with a MQTT Broker to send/ publish the actual temperature of each Heating Cirquit
+- Publishes status and temperatures for a Node‑RED dashboard.
 */
-A simple, readable controller for up to **3 heating circuits** running on **Arduino Portenta H7 + Machine Control**.
-It subscribes to MQTT for **target_temperatures** and **pump states**, reads local temperatures, computes error, and moves motorized valves with **non‑blocking** pulses. Publishes status and temperatures for a Node‑RED dashboard.
+
 
 ## Features
 - Up to 3 circuits (`NUM_CIRCUITS` in code).
