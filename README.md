@@ -1,7 +1,21 @@
 # Heating Controller (Portenta H7 + MQTT)
+/*
+Version 3.2 Written by Steff Eberle GBS St. Gallen August 20ieth 2025
 
+Implementation for the Arduino Machine Control Board on the Portenta H7 M7core
+
+The current version of this Temperature control unit is capable of:
+- controlling up to 3 Heating Cirquits
+- communicating with a MQTT Broker via Ethernet/Internet
+- communicating with a MQTT Broker to receive /subscribe the target temperature for each Heating Cirquit
+- communicating with a MQTT Broker to receive /subscribe the HeatingPump activation for each Heating Cirquit
+- doing Temperature Measurements /measures the actual Temperature of each Heating Cirquit with the HW on the Arduino Machine Control Board
+- Controls the Valves of each Heating Cirquit...the open/close valves need to be operated in a duty cycle mode, as there is a time delay 
+of valve adjustment and the effect of temperature adjustment
+- communicating with a MQTT Broker to send/ publish the actual temperature of each Heating Cirquit
+*/
 A simple, readable controller for up to **3 heating circuits** running on **Arduino Portenta H7 + Machine Control**.
-It subscribes to MQTT for **targets** and **pump states**, reads local temperatures, computes error, and moves motorized valves with **non‑blocking** pulses. Publishes status and temperatures for a Node‑RED dashboard.
+It subscribes to MQTT for **target_temperatures** and **pump states**, reads local temperatures, computes error, and moves motorized valves with **non‑blocking** pulses. Publishes status and temperatures for a Node‑RED dashboard.
 
 ## Features
 - Up to 3 circuits (`NUM_CIRCUITS` in code).
